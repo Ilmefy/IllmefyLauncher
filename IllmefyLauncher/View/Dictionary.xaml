@@ -1,0 +1,59 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <SolidColorBrush x:Key="TopMenuItemBrushDefault">DarkGray</SolidColorBrush>
+    <Color x:Key="TopMenuItemBrushMouseOver">Black</Color>
+
+    <Style x:Key="ListViewItemContainerStyle1" TargetType="{x:Type ListViewItem}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ListViewItem}">
+                    <ControlTemplate.Resources>
+                        
+                        <Storyboard x:Key="mouseOverStoryboard">
+                            <ColorAnimation To="{StaticResource TopMenuItemBrushMouseOver}" Storyboard.TargetName="title" Duration="0:0:0:0.2" Storyboard.TargetProperty="Foreground.(SolidColorBrush.Color)"/>
+                            <ColorAnimation To="{StaticResource TopMenuItemBrushMouseOver}" Storyboard.TargetName="iconData" Duration="0:0:0:0.2" Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)"/>
+                        </Storyboard>
+                        <Storyboard x:Key="mouseOutsideStoryboard">
+                            <ColorAnimation  Storyboard.TargetName="title" Duration="0:0:0:0.2" Storyboard.TargetProperty="Foreground.(SolidColorBrush.Color)"/>
+                            <ColorAnimation  Storyboard.TargetName="iconData" Duration="0:0:0:0.2" Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)"/>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    
+                    <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}">
+                        <StackPanel  Orientation="Horizontal" Margin="0,0,10,0">
+                            <Path x:Name="iconData" Data="{Binding IconData}" Stretch="Uniform" Width="20" Height="20" Stroke="{StaticResource TopMenuItemBrushDefault}" Fill="Transparent"/>
+                            <TextBlock Name="title" Text="{Binding Title}" Foreground="{StaticResource TopMenuItemBrushDefault}" FontWeight="Normal"  VerticalAlignment="Center" Margin="5,0,0,0"/>
+                        </StackPanel>
+                    </Border>
+                   
+                    <ControlTemplate.Triggers>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsMouseOver" Value="True"/>
+                                <Condition Property="IsSelected" Value="False"/>
+                            </MultiTrigger.Conditions>
+                            <MultiTrigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource mouseOverStoryboard}"/>
+                            </MultiTrigger.EnterActions>
+                            <MultiTrigger.ExitActions>
+                                <BeginStoryboard Storyboard="{StaticResource mouseOutsideStoryboard}"/>
+                            </MultiTrigger.ExitActions>
+                        </MultiTrigger>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource mouseOverStoryboard}"/>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard Storyboard="{StaticResource mouseOutsideStoryboard}"/>
+                            </Trigger.ExitActions>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>
