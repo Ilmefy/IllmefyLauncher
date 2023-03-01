@@ -14,12 +14,15 @@
             <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <ListView BorderThickness="0" BorderBrush="Transparent" ItemContainerStyle="{DynamicResource ListViewItemContainerStyle1}"  ItemsSource="{Binding MenuItems}">
+        <ListView SelectedItem="{Binding SelectedView}" BorderThickness="0" BorderBrush="Transparent" ItemContainerStyle="{DynamicResource ListViewItemContainerStyle1}"  ItemsSource="{Binding MenuItems}">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <StackPanel Orientation="Horizontal"/>
                 </ItemsPanelTemplate>
             </ListView.ItemsPanel>
         </ListView>
+        <Grid Grid.Row="1">
+            <ContentControl Content="{Binding SelectedViewModel}"/>
+        </Grid>
     </Grid>
 </Window>

@@ -3,6 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:IllmefyLauncher"
              xmlns:Model="clr-namespace:IllmefyLauncher.Model"
+             xmlns:ViewModel="clr-namespace:IllmefyLauncher.ViewModel"
+             xmlns:View="clr-namespace:IllmefyLauncher.View"
              StartupUri="/View/ShellWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
@@ -10,6 +12,12 @@
                 <ResourceDictionary  Source="/View/Dictionary.xaml"/>
                 
             </ResourceDictionary.MergedDictionaries>
+            <DataTemplate DataType="{x:Type ViewModel:MainViewModel}">
+                <View:MainView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type ViewModel:SettingsViewModel}">
+                <View:SettingsView/>
+            </DataTemplate>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
