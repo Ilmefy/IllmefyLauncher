@@ -14,7 +14,8 @@
             <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <ListView SelectedItem="{Binding SelectedView}" BorderThickness="0" BorderBrush="Transparent" ItemContainerStyle="{DynamicResource ListViewItemContainerStyle1}"  ItemsSource="{Binding MenuItems}">
+        <Image Grid.RowSpan="2" Stretch="UniformToFill" Source="{Binding Background}"/>
+        <ListView Margin="10,0,10,0" Background="Transparent" SelectedItem="{Binding SelectedView}" BorderThickness="0" BorderBrush="Transparent" ItemContainerStyle="{DynamicResource TopMenuListViewItemContainerStyle}"  ItemsSource="{Binding MenuItems}">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <StackPanel Orientation="Horizontal"/>

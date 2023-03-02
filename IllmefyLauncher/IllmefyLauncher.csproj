@@ -8,6 +8,39 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\Backgrounds\BattleForAzeroth.jpg" />
+    <None Remove="Resources\Backgrounds\Cataclysm.jpg" />
+    <None Remove="Resources\Backgrounds\Dalaran.jpg" />
+    <None Remove="Resources\Backgrounds\Dragonflight.jpg" />
+    <None Remove="Resources\Backgrounds\legion.jpg" />
+    <None Remove="Resources\Backgrounds\MistsOfPandaria.jpg" />
+    <None Remove="Resources\Backgrounds\SessionBackground.jpg" />
+    <None Remove="Resources\Backgrounds\TheBurningCrusade.jpg" />
+    <None Remove="Resources\Backgrounds\vanilla.jpg" />
+    <None Remove="Resources\Backgrounds\WarlordsOfDraenor.jpg" />
+    <None Remove="Resources\Backgrounds\WrathOfTheLichKing.jpg" />
+    <None Remove="Resources\BattleForAzeroth.jpg" />
+    <None Remove="Resources\Cataclysm.jpg" />
+    <None Remove="Resources\Dalaran.jpg" />
+    <None Remove="Resources\Dragonflight.jpg" />
+    <None Remove="Resources\ExpansionIcons\BattleForAzeroth.png" />
+    <None Remove="Resources\ExpansionIcons\Cataclysm.png" />
+    <None Remove="Resources\ExpansionIcons\Legion.png" />
+    <None Remove="Resources\ExpansionIcons\MistsOfPandaria.png" />
+    <None Remove="Resources\ExpansionIcons\TheBurningCrusade.png" />
+    <None Remove="Resources\ExpansionIcons\Vanilla.png" />
+    <None Remove="Resources\ExpansionIcons\WarlordsOfDraenor.png" />
+    <None Remove="Resources\ExpansionIcons\WrathOfTheLichKing.png" />
+    <None Remove="Resources\Legion.jpg" />
+    <None Remove="Resources\MistsOfPandaria.jpg" />
+    <None Remove="Resources\SessionBackground.jpg" />
+    <None Remove="Resources\TheBurningCrusade.jpg" />
+    <None Remove="Resources\vanilla.jpg" />
+    <None Remove="Resources\WarlordsOfDraenor.jpg" />
+    <None Remove="Resources\WrathOfTheLichKing.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.1.0" />
   </ItemGroup>
 
@@ -15,6 +48,39 @@
     <Reference Include="System.Windows.Forms">
       <HintPath>..\..\..\..\..\Windows\Microsoft.NET\Framework\v2.0.50727\System.Windows.Forms.dll</HintPath>
     </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\BattleForAzeroth.jpg" />
+    <Resource Include="Resources\Backgrounds\Cataclysm.jpg" />
+    <Resource Include="Resources\Backgrounds\Dalaran.jpg" />
+    <Resource Include="Resources\Backgrounds\Dragonflight.jpg" />
+    <Resource Include="Resources\Backgrounds\legion.jpg" />
+    <Resource Include="Resources\Backgrounds\MistsOfPandaria.jpg" />
+    <Resource Include="Resources\Backgrounds\SessionBackground.jpg" />
+    <Resource Include="Resources\Backgrounds\TheBurningCrusade.jpg" />
+    <Resource Include="Resources\Backgrounds\vanilla.jpg" />
+    <Resource Include="Resources\Backgrounds\WarlordsOfDraenor.jpg" />
+    <Resource Include="Resources\Backgrounds\WrathOfTheLichKing.jpg" />
+    <Resource Include="Resources\BattleForAzeroth.jpg" />
+    <Resource Include="Resources\Cataclysm.jpg" />
+    <Resource Include="Resources\Dalaran.jpg" />
+    <Resource Include="Resources\Dragonflight.jpg" />
+    <Resource Include="Resources\ExpansionIcons\BattleForAzeroth.png" />
+    <Resource Include="Resources\ExpansionIcons\Cataclysm.png" />
+    <Resource Include="Resources\ExpansionIcons\Legion.png" />
+    <Resource Include="Resources\ExpansionIcons\MistsOfPandaria.png" />
+    <Resource Include="Resources\ExpansionIcons\TheBurningCrusade.png" />
+    <Resource Include="Resources\ExpansionIcons\Vanilla.png" />
+    <Resource Include="Resources\ExpansionIcons\WarlordsOfDraenor.png" />
+    <Resource Include="Resources\ExpansionIcons\WrathOfTheLichKing.png" />
+    <Resource Include="Resources\Legion.jpg" />
+    <Resource Include="Resources\MistsOfPandaria.jpg" />
+    <Resource Include="Resources\SessionBackground.jpg" />
+    <Resource Include="Resources\TheBurningCrusade.jpg" />
+    <Resource Include="Resources\vanilla.jpg" />
+    <Resource Include="Resources\WarlordsOfDraenor.jpg" />
+    <Resource Include="Resources\WrathOfTheLichKing.jpg" />
   </ItemGroup>
 
 </Project>

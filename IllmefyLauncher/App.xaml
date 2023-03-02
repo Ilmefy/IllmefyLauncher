@@ -9,7 +9,8 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary  Source="/View/Dictionary.xaml"/>
+                <ResourceDictionary  Source="/View/Dictionaries/ShellDictionary.xaml"/>
+                <ResourceDictionary  Source="/View/Dictionaries/ViewDictionary.xaml"/>
                 
             </ResourceDictionary.MergedDictionaries>
             <DataTemplate DataType="{x:Type ViewModel:MainViewModel}">
@@ -18,6 +19,8 @@
             <DataTemplate DataType="{x:Type ViewModel:SettingsViewModel}">
                 <View:SettingsView/>
             </DataTemplate>
+            
         </ResourceDictionary>
+        
     </Application.Resources>
 </Application>
