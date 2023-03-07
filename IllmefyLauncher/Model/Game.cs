@@ -82,11 +82,47 @@ namespace IllmefyLauncher.Model
             string directory = Path.GetDirectoryName(LauncherPath);
         }
     }
+    public class NewGames:Game
+    {
+
+    }
     public class VanillaGame : OldGames
     {
 
     }
+    public class TheBurningCrusadeGame : OldGames
+    {
+
+    }
     public class WrathOfTheLichKingGame : OldGames
+    {
+
+    }
+    public class CataclysmGame : OldGames
+    {
+
+    }
+    public class MistsOfPandariaGame : OldGames
+    {
+
+    }
+    public class WarlordsOfDraenorGame : NewGames
+    {
+
+    }
+    public class LegionGame : NewGames
+    {
+
+    }
+    public class BattleForAzerothGame : NewGames
+    {
+
+    }
+    public class ShadowlandsGame : NewGames
+    {
+
+    }
+    public class DragonflightGame : NewGames
     {
 
     }

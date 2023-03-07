@@ -60,4 +60,33 @@
             </Setter.Value>
         </Setter>
     </Style>
+    <Style x:Key="ExitButtonStyle" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid Width="30" Height="25" Background="Transparent" Name="container">
+                        <Path Width="22" Height="18"  Stretch="Uniform" Fill="White" Data="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation Storyboard.TargetProperty="(Grid.Background).(SolidColorBrush.Color)" To="IndianRed" Storyboard.TargetName="container" Duration="{StaticResource DefaultAnimationDuration}"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation Storyboard.TargetProperty="(Grid.Background).(SolidColorBrush.Color)"  Storyboard.TargetName="container" Duration="{StaticResource DefaultAnimationDuration}"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 </ResourceDictionary>

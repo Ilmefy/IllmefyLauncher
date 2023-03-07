@@ -15,9 +15,15 @@
             <ColumnDefinition Width="120"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        
 
-        <ListView BorderBrush="Transparent" BorderThickness="0"  Background="Transparent" ItemsSource="{Binding Games}" SelectedValue="{Binding SelectedGame}" ItemContainerStyle="{StaticResource GameListViewItemContainerStyle}">
-        </ListView>
+        <Viewbox VerticalAlignment="Top">
+            <StackPanel VerticalAlignment="Top">
+                <ListView BorderBrush="Transparent" BorderThickness="0"  Background="Transparent" ItemsSource="{Binding Games}" SelectedValue="{Binding SelectedGame}" ItemContainerStyle="{StaticResource GameListViewItemContainerStyle}" VerticalAlignment="Top">
+                </ListView>
+                <Button Command="{Binding AddGameButtonCommand}" Style="{StaticResource AddGameButton}"/>
+               
+            </StackPanel>
+        </Viewbox>
+        
     </Grid>
 </UserControl>

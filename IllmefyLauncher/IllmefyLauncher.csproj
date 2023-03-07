@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\Backgrounds\AddGameBackground.jpg" />
     <None Remove="Resources\Backgrounds\BattleForAzeroth.jpg" />
     <None Remove="Resources\Backgrounds\Cataclysm.jpg" />
     <None Remove="Resources\Backgrounds\Dalaran.jpg" />
@@ -37,6 +38,7 @@
     <None Remove="Resources\MistsOfPandaria.jpg" />
     <None Remove="Resources\SessionBackground.jpg" />
     <None Remove="Resources\TheBurningCrusade.jpg" />
+    <None Remove="Resources\Tips\AddGame.jpg" />
     <None Remove="Resources\vanilla.jpg" />
     <None Remove="Resources\WarlordsOfDraenor.jpg" />
     <None Remove="Resources\WrathOfTheLichKing.jpg" />
@@ -53,6 +55,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Resources\Backgrounds\AddGameBackground.jpg" />
     <Resource Include="Resources\Backgrounds\BattleForAzeroth.jpg" />
     <Resource Include="Resources\Backgrounds\Cataclysm.jpg" />
     <Resource Include="Resources\Backgrounds\Dalaran.jpg" />
@@ -82,6 +85,7 @@
     <Resource Include="Resources\MistsOfPandaria.jpg" />
     <Resource Include="Resources\SessionBackground.jpg" />
     <Resource Include="Resources\TheBurningCrusade.jpg" />
+    <Resource Include="Resources\Tips\AddGame.jpg" />
     <Resource Include="Resources\vanilla.jpg" />
     <Resource Include="Resources\WarlordsOfDraenor.jpg" />
     <Resource Include="Resources\WrathOfTheLichKing.jpg" />

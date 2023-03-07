@@ -70,6 +70,39 @@
             </Setter.Value>
         </Setter>
     </Style>
-
+    <Style x:Key="AddGameButton" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Name="container" BorderThickness="1" CornerRadius="5" Background="RoyalBlue" BorderBrush="Transparent">
+                        <Label Name="label" VerticalAlignment="Center" HorizontalAlignment="Center" Content="Add Game" Foreground="White"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation To="Transparent" Storyboard.TargetName="container" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" Duration="{StaticResource DefaultAnimationDuration}"/>
+                                        <ColorAnimation To="RoyalBlue" Storyboard.TargetName="container" Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)" Duration="{StaticResource DefaultAnimationDuration}"/>
+                                        <ColorAnimation To="RoyalBlue" Storyboard.TargetName="label" Storyboard.TargetProperty="Foreground.(SolidColorBrush.Color)" Duration="{StaticResource DefaultAnimationDuration}"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation  Storyboard.TargetName="container" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" Duration="{StaticResource DefaultAnimationDuration}"/>
+                                        <ColorAnimation  Storyboard.TargetName="container" Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)" Duration="{StaticResource DefaultAnimationDuration}"/>
+                                        <ColorAnimation  Storyboard.TargetName="label" Storyboard.TargetProperty="Foreground.(SolidColorBrush.Color)" Duration="{StaticResource DefaultAnimationDuration}"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="PlayGameButton" TargetType="{x:Type Button}" BasedOn="{StaticResource AddGameButton}"/>
 
 </ResourceDictionary>
