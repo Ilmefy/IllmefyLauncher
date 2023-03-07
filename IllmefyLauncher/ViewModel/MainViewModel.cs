@@ -15,10 +15,7 @@ namespace IllmefyLauncher.ViewModel
         ObservableCollection<Game> _games = new ObservableCollection<Game>();
         public MainViewModel()
         {
-            Game g = new Game() { Expansion = Expansion.Legion };
-            Game g1 = new Game() { Expansion = Expansion.BattleForAzeroth };
-            Games.Add(g);
-            Games.Add(g1);
+          Game game=GameCreator.CreateGame(@"D:\World of Warcraft\Wow.exe");
         }
         [ObservableProperty]
         private Game _selectedGame;

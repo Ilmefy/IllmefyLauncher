@@ -16,6 +16,7 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         
+
         <ListView BorderBrush="Transparent" BorderThickness="0"  Background="Transparent" ItemsSource="{Binding Games}" SelectedValue="{Binding SelectedGame}" ItemContainerStyle="{StaticResource GameListViewItemContainerStyle}">
         </ListView>
     </Grid>

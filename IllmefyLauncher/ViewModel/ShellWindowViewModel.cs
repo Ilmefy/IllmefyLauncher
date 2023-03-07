@@ -51,7 +51,7 @@ namespace IllmefyLauncher.ViewModel
             Background = message.Value;
         }
         [ObservableProperty]
-        private BitmapImage _background;
+        private BitmapImage _background=new BitmapImage(new Uri("/Resources/Backgrounds/Default.jpg",UriKind.RelativeOrAbsolute));
         #endregion
     }
 }

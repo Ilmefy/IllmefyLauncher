@@ -11,6 +11,7 @@
     <None Remove="Resources\Backgrounds\BattleForAzeroth.jpg" />
     <None Remove="Resources\Backgrounds\Cataclysm.jpg" />
     <None Remove="Resources\Backgrounds\Dalaran.jpg" />
+    <None Remove="Resources\Backgrounds\Default.jpg" />
     <None Remove="Resources\Backgrounds\Dragonflight.jpg" />
     <None Remove="Resources\Backgrounds\legion.jpg" />
     <None Remove="Resources\Backgrounds\MistsOfPandaria.jpg" />
@@ -19,6 +20,7 @@
     <None Remove="Resources\Backgrounds\vanilla.jpg" />
     <None Remove="Resources\Backgrounds\WarlordsOfDraenor.jpg" />
     <None Remove="Resources\Backgrounds\WrathOfTheLichKing.jpg" />
+    <None Remove="Resources\Backgrounds\Ysera.jpg" />
     <None Remove="Resources\BattleForAzeroth.jpg" />
     <None Remove="Resources\Cataclysm.jpg" />
     <None Remove="Resources\Dalaran.jpg" />
@@ -54,6 +56,7 @@
     <Resource Include="Resources\Backgrounds\BattleForAzeroth.jpg" />
     <Resource Include="Resources\Backgrounds\Cataclysm.jpg" />
     <Resource Include="Resources\Backgrounds\Dalaran.jpg" />
+    <Resource Include="Resources\Backgrounds\Default.jpg" />
     <Resource Include="Resources\Backgrounds\Dragonflight.jpg" />
     <Resource Include="Resources\Backgrounds\legion.jpg" />
     <Resource Include="Resources\Backgrounds\MistsOfPandaria.jpg" />
@@ -62,6 +65,7 @@
     <Resource Include="Resources\Backgrounds\vanilla.jpg" />
     <Resource Include="Resources\Backgrounds\WarlordsOfDraenor.jpg" />
     <Resource Include="Resources\Backgrounds\WrathOfTheLichKing.jpg" />
+    <Resource Include="Resources\Backgrounds\Ysera.jpg" />
     <Resource Include="Resources\BattleForAzeroth.jpg" />
     <Resource Include="Resources\Cataclysm.jpg" />
     <Resource Include="Resources\Dalaran.jpg" />
