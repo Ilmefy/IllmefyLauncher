@@ -27,15 +27,24 @@ namespace IllmefyLauncher.Model
     }
     public abstract class Game
     {
-        public string Name { get; set; }
+        public string? Name { get; set; }
         public string LauncherPath { get; set; }
+        [Newtonsoft.Json.JsonIgnore]
         public string GameDirectory { get { return Path.GetDirectoryName(LauncherPath); } }
+        [Newtonsoft.Json.JsonIgnore]
         public Expansion Expansion
         {
             get
             {
                 if (this is VanillaGame) return Expansion.Vanilla;
                 if (this is WrathOfTheLichKingGame) return Expansion.WrathOfTheLichKing;
+                if (this is CataclysmGame) return Expansion.Cataclysm;
+                if (this is MistsOfPandariaGame) return Expansion.MistsOfPandaria;
+                if (this is WarlordsOfDraenorGame) return Expansion.WarlordsOfDraenor;
+                if (this is LegionGame) return Expansion.Legion;
+                if (this is BattleForAzerothGame) return Expansion.BattleForAzeroth;
+                if (this is ShadowlandsGame) return Expansion.Shadowlands;
+                if (this is DragonflightGame) return Expansion.Dragonflight;
                 return Expansion.All;
             }
         }
@@ -56,7 +65,7 @@ namespace IllmefyLauncher.Model
                 case Expansion.Cataclysm:
                     break;
                 case Expansion.MistsOfPandaria:
-                    break;
+                    return new MistsOfPandariaGame();
                 case Expansion.WarlordsOfDraenor:
                     break;
                 case Expansion.Legion:
@@ -72,7 +81,9 @@ namespace IllmefyLauncher.Model
             }
             return null;
         }
+        [Newtonsoft.Json.JsonIgnore]
         public BitmapImage ExpansionIcon { get { return new BitmapImage(new Uri($"/Resources/ExpansionIcons/{Expansion}.png", UriKind.Relative)); } }
+        [Newtonsoft.Json.JsonIgnore]
         public BitmapImage ExpansionBackground { get { return new BitmapImage(new Uri($"/Resources/Backgrounds/{Expansion}.jpg", UriKind.RelativeOrAbsolute)); } }
     }    
     public class OldGames : Game

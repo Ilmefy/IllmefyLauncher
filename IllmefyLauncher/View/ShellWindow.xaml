@@ -4,6 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:viewModel="clr-namespace:IllmefyLauncher.ViewModel"
+        WindowState="{Binding ShellWindowState, Mode=TwoWay}"
+        WindowStyle="None"
         mc:Ignorable="d"
         Title="ShellWindow" Height="450" Width="800">
     <Window.Resources>
@@ -15,13 +17,22 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Image Grid.RowSpan="2" Stretch="UniformToFill" Source="{Binding Background}"/>
-        <ListView Margin="10,0,10,0" Background="Transparent" SelectedItem="{Binding SelectedView}" BorderThickness="0" BorderBrush="Transparent" ItemContainerStyle="{DynamicResource TopMenuListViewItemContainerStyle}"  ItemsSource="{Binding MenuItems}">
-            <ListView.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <StackPanel Orientation="Horizontal"/>
-                </ItemsPanelTemplate>
-            </ListView.ItemsPanel>
-        </ListView>
+        <Grid MouseLeftButtonDown="Grid_MouseLeftButtonDown"  Background="Transparent">
+            <ListView Margin="10,0,10,0" Background="Transparent" SelectedItem="{Binding SelectedView}" BorderThickness="0" BorderBrush="Transparent" ItemContainerStyle="{DynamicResource TopMenuListViewItemContainerStyle}"  ItemsSource="{Binding MenuItems}" HorizontalAlignment="Left">
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal"/>
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+            </ListView>
+            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                <Button Style="{StaticResource MinimizeButtonStyle}" Click="Button_Click_1"/>
+                <Button Style="{StaticResource MaximizeButtonStyle}" Click="Button_Click" />
+                <Button Style="{StaticResource ExitButtonStyle}" Command="{Binding ExitAppCommand}"/>
+                
+            </StackPanel>
+        </Grid>
+        
         <Grid Grid.Row="1">
             <ContentControl Content="{Binding SelectedViewModel}"/>
         </Grid>

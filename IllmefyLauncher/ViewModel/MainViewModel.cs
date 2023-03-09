@@ -13,11 +13,16 @@ namespace IllmefyLauncher.ViewModel
 {
     public partial class MainViewModel:ObservableObject, IRecipient<StringMessage>
     {
-        [ObservableProperty]
-        ObservableCollection<Game> _games = new ObservableCollection<Game>();
+        
+        public ObservableCollection<Game> Games { get { return _appData.UserData.Games; } }
+        AppData _appData;
+        public MainViewModel(AppData appData)
+        {
+            _appData= appData;
+        }
         public MainViewModel()
         {
-          Game game=GameCreator.CreateGame(@"D:\World of Warcraft\Wow.exe");
+
         }
         [ObservableProperty]
         private Game _selectedGame;
@@ -41,14 +46,9 @@ namespace IllmefyLauncher.ViewModel
             if(!string.Equals(fileName,"ClosedWindow", System.StringComparison.OrdinalIgnoreCase))
             {
                 var game = GameCreator.CreateGame(fileName);
-                _games.Add(game);
+                _appData.UserData.Games.Add(game);
             }
-            
             WeakReferenceMessenger.Default.Unregister<StringMessage>(this);
-        }
-        private void x()
-        {
-            
         }
     }
 }

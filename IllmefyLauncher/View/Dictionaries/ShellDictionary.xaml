@@ -89,4 +89,102 @@
             </Setter.Value>
         </Setter>
     </Style>
+    <Style x:Key="MinimizeButtonStyle" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid Width="30" Height="25" Background="Transparent" Name="container">
+                        <Path Width="22" Height="18"  Stretch="Uniform" Fill="White" Data="M240 926v-60h481v60H240Z"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation Storyboard.TargetProperty="(Grid.Background).(SolidColorBrush.Color)" To="#33FFFFFF" Storyboard.TargetName="container" Duration="{StaticResource DefaultAnimationDuration}"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation Storyboard.TargetProperty="(Grid.Background).(SolidColorBrush.Color)"  Storyboard.TargetName="container" Duration="{StaticResource DefaultAnimationDuration}"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="MaximizeButtonStyle" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid Width="30" Height="25" Background="Transparent" Name="container">
+                        <Path Width="22" Height="18"  Stretch="Uniform" Fill="White" Data="M200 916q-24 0-42-18t-18-42V296q0-24 18-42t42-18h560q24 0 42 18t18 42v560q0 24-18 42t-42 18H200Zm0-60h560V296H200v560Zm0-560v560-560Z"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation Storyboard.TargetProperty="(Grid.Background).(SolidColorBrush.Color)" To="#33FFFFFF" Storyboard.TargetName="container" Duration="{StaticResource DefaultAnimationDuration}"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation Storyboard.TargetProperty="(Grid.Background).(SolidColorBrush.Color)"  Storyboard.TargetName="container" Duration="{StaticResource DefaultAnimationDuration}"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="{x:Type ScrollBar}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ScrollBar}">
+                    <Track Name="PART_Track" IsDirectionReversed="True">
+                        <Track.Thumb>
+                            <Thumb >
+                                <Thumb.Template>
+                                    <ControlTemplate>
+                                        <Border CornerRadius="2" Background="Gray" Name="thumb" Width="5" />
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Trigger.EnterActions> 
+                                                    <BeginStoryboard>
+                                                        <Storyboard>
+                                                            <ColorAnimation Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" Storyboard.TargetName="thumb"
+                                                                            To="White" Duration="{StaticResource DefaultAnimationDuration}"/>
+                                                        </Storyboard>
+                                                    </BeginStoryboard>
+                                                </Trigger.EnterActions>
+                                                <Trigger.ExitActions>
+                                                    <BeginStoryboard>
+                                                        <Storyboard>
+                                                            <ColorAnimation Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" Storyboard.TargetName="thumb"
+                                                                             Duration="{StaticResource DefaultAnimationDuration}"/>
+                                                        </Storyboard>
+                                                    </BeginStoryboard>
+                                                </Trigger.ExitActions>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                    
+                                </Thumb.Template>
+                            </Thumb>
+                        </Track.Thumb>
+                    </Track>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 </ResourceDictionary>

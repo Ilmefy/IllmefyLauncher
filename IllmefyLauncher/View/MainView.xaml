@@ -12,18 +12,24 @@
     </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="120"/>
+            <ColumnDefinition Width="130"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Viewbox VerticalAlignment="Top">
-            <StackPanel VerticalAlignment="Top">
+
+        <Grid VerticalAlignment="Top">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="9*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <ScrollViewer HorizontalScrollBarVisibility="Disabled"  PreviewMouseWheel="ScrollViewer_PreviewMouseWheel" VerticalAlignment="Top">
                 <ListView BorderBrush="Transparent" BorderThickness="0"  Background="Transparent" ItemsSource="{Binding Games}" SelectedValue="{Binding SelectedGame}" ItemContainerStyle="{StaticResource GameListViewItemContainerStyle}" VerticalAlignment="Top">
                 </ListView>
-                <Button Command="{Binding AddGameButtonCommand}" Style="{StaticResource AddGameButton}"/>
-               
-            </StackPanel>
-        </Viewbox>
-        
+            </ScrollViewer>
+            <Button Grid.Row="1"  Command="{Binding AddGameButtonCommand}" Style="{StaticResource AddGameButton}"/>
+
+        </Grid>
+
+
     </Grid>
 </UserControl>

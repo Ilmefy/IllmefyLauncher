@@ -15,7 +15,12 @@ namespace IllmefyLauncher.Model
         {
             GameValidator gameValidator = GetValidator(gameLauncher);
             if (gameValidator.Validate())
-                return CreateGameInstance();
+            {
+                Game game = CreateGameInstance();
+                game.LauncherPath = gameLauncher;
+                return game;
+            }
+
             return null;
         }
         private static Game? CreateGameInstance()
@@ -33,7 +38,7 @@ namespace IllmefyLauncher.Model
                 case Expansion.Cataclysm:
                     return new CataclysmGame();
                 case Expansion.MistsOfPandaria:
-                    return  new MistsOfPandariaGame();
+                    return new MistsOfPandariaGame();
                 case Expansion.WarlordsOfDraenor:
                     return new WarlordsOfDraenorGame();
                 case Expansion.Legion:
@@ -54,7 +59,11 @@ namespace IllmefyLauncher.Model
             if (File.Exists(gameLauncher))
             {
                 FileVersionInfo fileVersionInfo = FileVersionInfo.GetVersionInfo(gameLauncher);
-                int firstNumberOfFileVersion = int.Parse(fileVersionInfo.FileVersion[0].ToString());
+                int indexOfDot = fileVersionInfo.FileVersion.IndexOf(".");
+                if(indexOfDot==-1)
+                   indexOfDot= fileVersionInfo.FileVersion.IndexOf(",");
+                int firstNumberOfFileVersion = int.Parse(fileVersionInfo.FileVersion.Substring(0, indexOfDot));
+                
                 if (firstNumberOfFileVersion > 0)
                 {
                     Expansion expansion = (Expansion)firstNumberOfFileVersion;
@@ -76,7 +85,7 @@ namespace IllmefyLauncher.Model
                         case Expansion.WarlordsOfDraenor:
                             return new WarlordsOfDraenorGameValidator(gameLauncher);
                         case Expansion.Legion:
-                            return new LegionGameValidator(gameLauncher);   
+                            return new LegionGameValidator(gameLauncher);
                         case Expansion.BattleForAzeroth:
                             return new BattleForAzerothGameValidator(gameLauncher);
                         case Expansion.Shadowlands:
@@ -141,18 +150,18 @@ namespace IllmefyLauncher.Model
         {
         }
 
-        protected override string[] _requiredFiles => throw new NotImplementedException();
+        protected override string[] _requiredFiles => new string[] { };//TODO
 
-        protected override string[] _requiredDirectories => throw new NotImplementedException();
+        protected override string[] _requiredDirectories => new string[] { };//TODO
     }
     public class TheBurningCrusadeGameValidator : GameValidator
     {
         public TheBurningCrusadeGameValidator(string gameLauncherFileName) : base(gameLauncherFileName)
         {
         }
-        protected override string[] _requiredFiles => throw new NotImplementedException();
+        protected override string[] _requiredFiles => new string[] { };//TODO
 
-        protected override string[] _requiredDirectories => throw new NotImplementedException();
+        protected override string[] _requiredDirectories => new string[] { };//TODO
     }
     public class WrathOfTheLichKingGameValidator : GameValidator
     {
@@ -170,9 +179,9 @@ namespace IllmefyLauncher.Model
         {
         }
 
-        protected override string[] _requiredFiles => throw new NotImplementedException();
+        protected override string[] _requiredFiles => new string[] { };//TODO
 
-        protected override string[] _requiredDirectories => throw new NotImplementedException();
+        protected override string[] _requiredDirectories => new string[] { };//TODO
     }
     public class MistsOfPandariaGameValidator : GameValidator
     {
@@ -180,9 +189,12 @@ namespace IllmefyLauncher.Model
         {
         }
 
-        protected override string[] _requiredFiles => throw new NotImplementedException();
+        protected override string[] _requiredFiles => new string[] {"alternate.MPQ",
+"art.MPQ",
+"base-Win.MPQ"
+};
 
-        protected override string[] _requiredDirectories => throw new NotImplementedException();
+        protected override string[] _requiredDirectories => new string[] { "Data" };
     }
     public class WarlordsOfDraenorGameValidator : GameValidator
     {
@@ -190,9 +202,9 @@ namespace IllmefyLauncher.Model
         {
         }
 
-        protected override string[] _requiredFiles => throw new NotImplementedException();
+        protected override string[] _requiredFiles => new string[] { };//TODO
 
-        protected override string[] _requiredDirectories => throw new NotImplementedException();
+        protected override string[] _requiredDirectories => new string[] { };//TODO
     }
     public class LegionGameValidator : GameValidator
     {
@@ -200,9 +212,9 @@ namespace IllmefyLauncher.Model
         {
         }
 
-        protected override string[] _requiredFiles => throw new NotImplementedException();
+        protected override string[] _requiredFiles => new string[] { };//TODO
 
-        protected override string[] _requiredDirectories => throw new NotImplementedException();
+        protected override string[] _requiredDirectories => new string[] { };//TODO
     }
     public class BattleForAzerothGameValidator : GameValidator
     {
@@ -210,9 +222,9 @@ namespace IllmefyLauncher.Model
         {
         }
 
-        protected override string[] _requiredFiles => throw new NotImplementedException();
+        protected override string[] _requiredFiles => new string[] { };//TODO
 
-        protected override string[] _requiredDirectories => throw new NotImplementedException();
+        protected override string[] _requiredDirectories => new string[] { };//TODO
     }
     public class ShadowlandsGameValidator : GameValidator
     {
@@ -220,9 +232,9 @@ namespace IllmefyLauncher.Model
         {
         }
 
-        protected override string[] _requiredFiles => throw new NotImplementedException();
+        protected override string[] _requiredFiles => new string[] { };//TODO
 
-        protected override string[] _requiredDirectories => throw new NotImplementedException();
+        protected override string[] _requiredDirectories => new string[] { };//TODO
     }
     public class DragonflightGameValidator : GameValidator
     {
@@ -230,8 +242,8 @@ namespace IllmefyLauncher.Model
         {
         }
 
-        protected override string[] _requiredFiles => throw new NotImplementedException();
+        protected override string[] _requiredFiles => new string[] { };//TODO
 
-        protected override string[] _requiredDirectories => throw new NotImplementedException();
+        protected override string[] _requiredDirectories => new string[] { };//TODO
     }
 }
